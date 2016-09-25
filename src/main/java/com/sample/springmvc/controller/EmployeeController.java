@@ -19,7 +19,7 @@ import com.sample.springmvc.domain.Employee;
 import com.sample.springmvc.service.EmployeeService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/employees")
 public class EmployeeController {
 	
 	@Autowired

@@ -61,11 +61,11 @@ public class Employee {
         this.name = name;
     }
  
-    public LocalDate getJoiningDate() {
+    public Date getJoiningDate() {
         return joiningDate;
     }
  
-    public void setJoiningDate(LocalDate joiningDate) {
+    public void setJoiningDate(Date joiningDate) {
         this.joiningDate = joiningDate;
     }
  
