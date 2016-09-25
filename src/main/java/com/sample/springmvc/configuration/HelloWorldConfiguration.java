@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.JstlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages="com.sample.springmvc")
-public class HelloWorldConfiguration extends WebMvcConfigurerAdapter {// 
+public class HelloWorldConfiguration extends WebMvcConfigurerAdapter {
 	
 	HelloWorldConfiguration(){
 		System.out.println("inside Spring MVC servlet context file");

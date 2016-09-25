@@ -2,7 +2,6 @@ package com.sample.springmvc.domain;
 
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +13,8 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.joda.time.LocalDate;
  
 @Entity
 @Table(name="EMPLOYEE")
@@ -30,12 +28,8 @@ public class Employee {
     @Column(name = "NAME", nullable = false)
     private String name;
  
-    @NotNull
-    @DateTimeFormat(pattern="dd/MM/yyyy") 
-    @Column(name = "JOINING_DATE", nullable = false)
-    //@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-    private Date joiningDate;
- 
+
+
     @NotNull
     @Digits(integer=8, fraction=2)
     @Column(name = "SALARY", nullable = false)
@@ -61,13 +55,7 @@ public class Employee {
         this.name = name;
     }
  
-    public Date getJoiningDate() {
-        return joiningDate;
-    }
- 
-    public void setJoiningDate(Date joiningDate) {
-        this.joiningDate = joiningDate;
-    }
+
  
     public BigDecimal getSalary() {
         return salary;
@@ -115,8 +103,7 @@ public class Employee {
  
     @Override
     public String toString() {
-        return "Employee [id=" + id + ", name=" + name + ", joiningDate="
-                + joiningDate + ", salary=" + salary + ", ssn=" + ssn + "]";
+        return "Employee [id=" + id + ", name=" + name +", salary=" + salary + ", ssn=" + ssn + "]";
     }
      
 }
