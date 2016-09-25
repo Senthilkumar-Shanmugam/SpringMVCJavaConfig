@@ -72,12 +72,12 @@ public class AppController {
 		 * framework as well while still using internationalized messages.
 		 * 
 		 */
-		if(!service.isEmployeeSsnUnique(employee.getId(), employee.getSsn())){
+	/*	if(!service.isEmployeeSsnUnique(employee.getId(), employee.getSsn())){
 			FieldError ssnError =new FieldError("employee","ssn",messageSource.getMessage("non.unique.ssn", new String[]{employee.getSsn()}, Locale.getDefault()));
 		    result.addError(ssnError);
 			return "registration";
 		}
-		
+		*/
 		service.saveEmployee(employee);
 
 		model.addAttribute("success", "Employee " + employee.getName() + " registered successfully");
@@ -108,11 +108,11 @@ public class AppController {
 			return "registration";
 		}
 
-		if(!service.isEmployeeSsnUnique(employee.getId(), employee.getSsn())){
+	/*	if(!service.isEmployeeSsnUnique(employee.getId(), employee.getSsn())){
 			FieldError ssnError =new FieldError("employee","ssn",messageSource.getMessage("non.unique.ssn", new String[]{employee.getSsn()}, Locale.getDefault()));
 		    result.addError(ssnError);
 			return "registration";
-		}
+		}*/
 
 		service.updateEmployee(employee);
 

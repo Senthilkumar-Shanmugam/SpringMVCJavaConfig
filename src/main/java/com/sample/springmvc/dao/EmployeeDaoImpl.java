@@ -43,7 +43,7 @@ public class EmployeeDaoImpl extends AbstractDao<Integer,Employee>implements Emp
 
 	@Override
 	public Employee findEmployeeBySsn(String ssn) {
-		return (Employee)getEntityManager().createQuery("SELECT e from Employee where e.ssn = :ssn").
+		return (Employee)getEntityManager().createQuery("SELECT e from Employee e where e.ssn = :ssn").
 		                    setParameter("ssn", ssn).getSingleResult();
 		
 		
